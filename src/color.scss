@@ -1,0 +1,196 @@
+@import "var";
+@import "mix";
+////
+/// @group Color
+/// Clases para gestion de colores en css
+////
+
+
+::-moz-selection { color: $yellow;  background: $dark; }
+::-webkit-selection { color: $yellow;  background: $dark; }
+::selection      { color: $yellow;  background: $dark; }
+
+/// Asignacion de Variables para los colores
+::root{
+	@each $n,$v in $colors{
+		--fs-#{$n}: #{$v};
+	}
+}
+
+/** Colores */
+@each $n,$v in $colors{
+	@if $enable-scroll {
+		@if $n != "transparent" {
+			.sb-#{$n} {
+				&,
+				& *{
+					scrollbar-color: $v $gray !important;
+				}
+
+			    &::-webkit-scrollbar-thumb,
+			    & ::-webkit-scrollbar-thumb {
+			        background-color: $v !important;
+			    }
+			    &-dark{
+			    	&,
+					& *{
+						scrollbar-color: $v $dark !important;
+					}
+			    }
+			}
+		}
+	}
+	.bg-#{$n}{
+		background-color: $v !important;
+		@if $n != "transparent" {
+
+			@include colors($v, 'background-color');
+			//light del color
+			@if $n != "white" {
+				@include lightenColor($v, 'background-color');
+			}
+			//darken del color
+			@if $n != "black" {
+				@include darkenColor($v, 'background-color');
+			}
+		}
+	}
+	.fg-#{$n}{
+		color: $v !important;
+		@if $n != "transparent" {
+
+			@include colors($v, 'color');
+			//light del color
+			@if $n != "white" {
+				@include lightenColor($v, 'color');
+			}
+			//darken del color
+			@if $n != "black" {
+				@include darkenColor($v, 'color');
+			}
+		}
+	}
+
+	.bd-#{$n}{
+		border-color: $v !important;
+		@if $n != "transparent" {
+
+			@include colors($v, 'border-color');
+			//light del color
+			@if $n != "white" {
+				@include lightenColor($v, 'border-color');
+			}
+			//darken del color
+			@if $n != "black" {
+				@include darkenColor($v, 'border-color');
+			}
+
+		}
+	}
+	.ol-#{$n}{
+		outline-color: $v !important;
+		@if $n != "transparent" {
+
+			&-focusw:focus-within,
+			&-hover:hover,
+			&-focus:focus,
+			&-visited:visited,
+			&-active:active{
+				outline-color: $v !important;
+			}
+
+			//light del color
+			@if $n != "white" {
+				@include lightenColor($v, 'outline-color');
+			}
+			//darken del color
+			@if $n != "black" {
+				@include darkenColor($v, 'outline-color');
+			}
+		}
+	}
+	.fl-#{$n}{
+		fill: $v !important;
+
+		&-focusw:focus-within,
+		&-hover:hover,
+		&-focus:focus,
+		&-visited:visited,
+		&-active:active{
+			fill: $v !important;
+		}
+	}
+	.sk-#{$n}{
+		stroke: $v !important;
+
+		&-focusw:focus-within,
+		&-hover:hover,
+		&-focus:focus,
+		&-visited:visited,
+		&-active:active{
+			stroke: $v !important;
+		}
+	}
+}
+
+@if $enable-theme {
+	/** Tema de Colores*/
+	@each $n, $c in $theme-colors {
+		.bg-#{$n}{
+			background-color: $c !important;
+			@include colors($c, 'background-color');
+		}
+		.fg-#{$n}{
+			color: $c !important;
+
+			@include colors($c, 'color');
+		}
+		.bd-#{$n}{
+			border-color: $c !important;
+			@include colors($c, 'border-color');
+		}
+	}
+}
+
+@if $enable-gradients {
+	/**  Degradados */
+	@each $prop, $value in $theme-gradient-colors {
+		.bg-gradient-#{$prop} {
+	    	@include gradient-directional(nth($value, 1) 0%, nth($value, -1) 100%, $deg: 195deg);
+	  	}
+	}
+
+	@each $prop, $value in $theme-gradient-colors {
+		.bg-gradient-#{$prop}-radial {
+	    	@include gradient-radial(nth($value, 1), nth($value, -1));
+	  	}
+	}
+
+	@each $prop, $value in $theme-colors {
+	  .bg-gradient-faded-#{$prop} {
+	    background-image: radial-gradient(370px circle at 80% 50%,rgba($value, .6) 0,darken($value, 10%) 100%)
+	  }
+	}
+}
+
+@if $enable-brands {
+	/** Marcas */
+	@each $n,$v in $brands{
+		.btn-#{$n}{
+			@include social-buttons-color($v, darken($v, 6%));
+		}
+		.bg-#{$n}{
+			background-color: $v !important;
+			@include colors($v, 'background-color');
+		}
+		.fg-#{$n}{
+			color: $v !important;
+			@include colors($v, 'color');
+		}
+	}
+}
+
+[class*="-hover"] {
+    transition: background-color 0.3s, color 0.3s, border-color 0.25s;
+}
+
