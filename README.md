@@ -1,12 +1,12 @@
 # Colors
 Colorea tu mundo
-
-Esto es un simple pero pontente archivo css con multiples clases para colorear con facilidad tus paginas web tiene eventos, y ademas añade los colores de las principales marcas de redes sociales entre otros
+![](docs/colors.png)
+Esto es un simple pero potente archivo css con múltiples clases para colorear con facilidad tus paginas web, tiene eventos, y además añade los colores de las principales marcas de redes sociales entre otros
 
 ## Uso
-Su uso es muy sencillo solo descarge, añada y use.
+Su uso es muy sencillo solo descargue, añada y use.
 
-Descarge
+Descargue
 ```Shell
 git clone https://github.com/REP98/Colors.git
 ```
@@ -20,13 +20,13 @@ Use
 ```
 
 ## Sass
-Ya que esta escrito en Sass y compilado a CSS puede usar el Sass y añadir sus propios colores para ampliar o modificiar su archivos
+Ya que esta escrito en Sass y compilado a CSS puede usar el Sass y añadir sus propios colores para ampliar o modificar su archivos
 
 ### Añadir y/o modificar
 Se ofrece 4 variables Sass para añadir o modificar los colores
 
 #### Colores
-Se dipone de una Variable `$color` que es un mapa scss
+Se dispone de una Variable `$color` que es un mapa scss
 ```Scss
 // Esto modificara el color rojo
 $color: map-merge(("red": #f22), $color); 
@@ -56,5 +56,5 @@ npm run css
 ```
 
 ## Demo
-Si desea conocer todos los Colores visite [La Carpeta Demo](demo/index.html)
+Si desea conocer todos los Colores visite [La Carpeta Docs](docs/index.html)
 
