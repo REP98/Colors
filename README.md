@@ -56,5 +56,5 @@ npm run css
 ```
 
 ## Demo
-Si desea conocer todos los Colores visite [La Carpeta Docs](docs/index.html)
+Si desea conocer todos los Colores visite [La Carpeta Docs](https://rep98.github.io/Colors)
 
