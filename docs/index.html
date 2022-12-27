@@ -1,14 +1,59 @@
 <!DOCTYPE html>
-<html class="sb-magenta">
+<html lang="es" class="sb-magenta">
 <head>
 	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="copyright" content="Robert Pérez, delfinmundo@gmail.com">
 	<title>Colors</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<meta name="title" content="Colors.scss">
+	<meta name="description" content="Colorea tu mundo, con Colors.scss  facil y rapido, ademas ofrecemos los colores de las redes sociales.">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:title" content="Colors.scss">
+	<meta property="og:site_name" content="Colors">
+	<meta property="og:locale" content="es-VE">
+	<meta property="og:url" content="https://rep98.github.io/Colors">
+	<meta property="og:description" content="Colorea tu mundo, con Colors.scss  facil y rapido, ademas ofrecemos los colores de las redes sociales.">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://rep98.github.io/Colors/colors.png">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://rep98.github.io/Colors">
+	<meta property="twitter:title" content="Colors.scss">
+	<meta property="twitter:description" content="Colorea tu mundo, con Colors.scss  facil y rapido, ademas ofrecemos los colores de las redes sociales.">
+	<meta property="twitter:image" content="https://rep98.github.io/colors.png">
+	<meta name="theme-color" content="#E91E63" />
+
+	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/prism.css">
 	<link rel="stylesheet" href="../dist/css/color.css">
 	<link rel="stylesheet" href="../dist/css/brands.css">
 	<style>
+		header{
+			position: relative;
+			background-image: url(colors.png);
+			height: 30vh;
+			background-position: center;
+			background-color: #000;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #fff;
+		}
+		header::before{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0 0 0 / 75%);
+		}
+		header h1{
+			z-index: 10;
+		}
 		main{
 			padding-left: 1em;
 			padding-right:  1em;
@@ -67,22 +112,24 @@
 	</style>
 </head>
 <body class="line-numbers">
-	<header style="background-image: url(colors.png);">
+	<header>
 		<h1>Colorea tu mundo</h1>
 	</header>
 	<main>
-
 		<p>
 			Grupo de colores para tus web.
 		</p>
 		<p>
 			Descargalo en <a href="https://github.com/REP98/Colors" target="_blank" class="fg-github-8 fg-github-5-visited fg-github-3-hover">GitHub</a> o por CDN
 		</p>
-		<pre>
-		<code>https://cdn.jsdelivr.net/gh/rep98/colors@0.0.5-beta/dist/css/color.css</code>
-		</pre>
+		<pre><code class="language-shell">
+https://cdn.jsdelivr.net/npm/@rep985/colors@0.1.1/dist/css/brands.min.css
+https://cdn.jsdelivr.net/npm/@rep985/colors@0.1.1/dist/css/color.min.css
+		</code></pre>
+		<p>Además puede usarlo por NPM</p>
+		<pre><code class="language-shell">npm i @rep985/colors</code></pre>
 		<hr class="bd-gray">
-		<h2>uso</h2>
+		<h2 id="uso">Uso</h2>
 		<p>
 			Su formula es muy sencilla solo indique el tipo, el color, el evento (opcional) y por ultimo la iluminación (opcional)
 			asi: <code class="fg-magenta-d2">.{formato}-{namecolor}-{before|after}-{event}-{light|darken}</code>
@@ -1023,8 +1070,8 @@ $brands: map-merge(
 				<h2 style="margin: 0;margin-left: 0.4em;font-size: 1.2em;">Me llamo Robert Pérez</h2>
 			</div>
 			<p style="text-align: center;font-size: 0.9em;" class="fg-white">
-				Si te gusto suscribete al <a href="https://blog.svilupporep.site" class="fg-deep-orange fg-deep-orange-active-d2 fg-orange-visited fg-red-hover-l2" alt="Blog Sviluppo Web" target="_blank">Blog de Sviluppo Web</a>
-				donde publico mis códigos, información y mucho más con otros desarrolladores del mundo web
+				Si te gusto vistia mi <a href="https://rep98.github.io" class="fg-deep-orange fg-deep-orange-active-d2 fg-orange-visited fg-red-hover-l2" alt="REP98" target="_blank" rel="follow">Sitio Web</a>
+				donde encontras otros geniales proyectos como este.
 			</p>
 		</div>
 	</div>

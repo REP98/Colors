@@ -11,13 +11,16 @@ Descargue
 git clone https://github.com/REP98/Colors.git
 ```
 ```Shell
-npm install Colors
+npm i @rep985/colors
 ```
 Añade
 ```Html
 <!-- CDN -->
-<link rel="stylesheet" href="path/Colors/dist/css/color.css"> <!-- Clases de Colores -->
-<link rel="stylesheet" href="path/Colors/dist/css/brands.css"> <!-- Clases para marcas -->
+<!-- Combinado -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/@rep985/colors@0.1.1/dist/css/brands.min.css,npm/@rep985/colors@0.1.1/dist/css/color.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rep985/colors@0.1.1/dist/css/brands.min.css"> <!-- Clases de Colores -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rep985/colors@0.1.1/dist/css/color.min.css"> <!-- Clases para marcas -->
 <!-- O local -->
 <link rel="stylesheet" href="path/Colors/dist/css/color.css"> <!-- Clases de Colores -->
 <link rel="stylesheet" href="path/Colors/dist/css/brands.css"> <!-- Clases para marcas -->
@@ -65,5 +68,5 @@ npm run css
 ```
 
 ## Demo
-Si desea conocer todos los Colores visite [La Carpeta Docs](docs/index.html)
+Si desea conocer todos los Colores visite [Nuestro Demo](https://rep98.github.io/Colors)
 
