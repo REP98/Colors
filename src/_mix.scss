@@ -1,41 +1,41 @@
 /// Ayuda a aclara el color para el uso de clases
 
 @mixin colors($color, $propetics){
-  &-focusw:focus-within,
-  &-hover:hover,
-  &-focus:focus,
-  &-visited:visited,
-  &-active:active{
-	#{$propetics}: $color !important;
-  }
-  &-before{
-	&::before{
-	  #{$propetics}: $color !important;
-	}
 	&-focusw:focus-within,
 	&-hover:hover,
 	&-focus:focus,
 	&-visited:visited,
 	&-active:active{
+		#{$propetics}: $color !important;
+	}
+	&-before{
 		&::before{
 			#{$propetics}: $color !important;
 		}
+		&-focusw:focus-within,
+		&-hover:hover,
+		&-focus:focus,
+		&-visited:visited,
+		&-active:active{
+			&::before{
+				#{$propetics}: $color !important;
+			}
+		}
 	}
-  }
-  &-after{
-	&::after{
-	  #{$propetics}: $color !important;
+	&-after{
+		&::after{
+			#{$propetics}: $color !important;
+		}
+		&-focusw:focus-within,
+		&-hover:hover,
+		&-focus:focus,
+		&-visited:visited,
+		&-active:active{
+			&::after{
+				#{$propetics}: $color !important;
+			}
+		}
 	}
-	&-focusw:focus-within,
-	&-hover:hover,
-	&-focus:focus,
-	&-visited:visited,
-	&-active:active{
-	  &::after{
-		#{$propetics}: $color !important;
-	  }
-	}
-  }
 }
 
 /// @example    .bg-red-l5 // el color sera 5 veces mas claro

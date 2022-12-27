@@ -10,13 +10,22 @@ Descargue
 ```Shell
 git clone https://github.com/REP98/Colors.git
 ```
+```Shell
+npm install Colors
+```
 Añade
 ```Html
-<link rel="stylesheet" href="path/Colors/dist/css/color.css">
+<!-- CDN -->
+<link rel="stylesheet" href="path/Colors/dist/css/color.css"> <!-- Clases de Colores -->
+<link rel="stylesheet" href="path/Colors/dist/css/brands.css"> <!-- Clases para marcas -->
+<!-- O local -->
+<link rel="stylesheet" href="path/Colors/dist/css/color.css"> <!-- Clases de Colores -->
+<link rel="stylesheet" href="path/Colors/dist/css/brands.css"> <!-- Clases para marcas -->
 ```
 Use
 ```Html
 <div class="bg-magenta">...</div>
+<button class="bg-blue bg-blue-hover-d2 fg-white-d2 fg-white-hover">Click</button>
 ```
 
 ## Sass
@@ -56,5 +65,5 @@ npm run css
 ```
 
 ## Demo
-Si desea conocer todos los Colores visite [La Carpeta Docs](https://rep98.github.io/Colors)
+Si desea conocer todos los Colores visite [La Carpeta Docs](docs/index.html)
 

@@ -1,0 +1,23 @@
+@import "var";
+@import "mix";
+
+@if $enable-brands {
+	/** Marcas */
+	@each $n,$v in $brands{
+		.btn-#{$n}{
+			@include social-buttons-color($v, darken($v, 6%));
+		}
+		.bg-#{$n}{
+			background-color: $v !important;
+			@include colors($v, 'background-color');
+		}
+		.fg-#{$n}{
+			color: $v !important;
+			@include colors($v, 'color');
+		}
+	}
+}
+
+[class*="-hover"] {
+    transition: background-color 0.3s, color 0.3s, border-color 0.25s;
+}
