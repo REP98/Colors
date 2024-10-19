@@ -1,11 +1,13 @@
-@import "var";
-@import "mix";
+@use "sass:color";
+
+@use "var" as *;
+@use "mix" as *;
 
 @if $enable-brands {
 	/** Marcas */
 	@each $n,$v in $brands{
 		.btn-#{$n}{
-			@include social-buttons-color($v, darken($v, 6%));
+			@include social-buttons-color($v, color.scale($v, $lightness: 6%));
 		}
 		.bg-#{$n}{
 			background-color: $v !important;

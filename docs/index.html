@@ -28,7 +28,10 @@
 
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/prism.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/@rep985/colors@0.1.1/dist/css/brands.min.css,npm/@rep985/colors@0.1.1/dist/css/color.min.css">
+	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/@rep985/colors@0.1.1/dist/css/brands.min.css,npm/@rep985/colors@0.1.1/dist/css/color.min.css">-->
+	<link rel="stylesheet" href="../dist/css/color.css">
+	<link rel="stylesheet" href="../dist/css/brands.css">
+	<script src="https://secure.gravatar.com/js/gprofiles.js"></script>
 	<style>
 		header{
 			position: relative;
@@ -87,7 +90,7 @@
 			border-radius: 3px;
 		}
 		.beaf::before{
-			content: "bg-magenta bg-indigo-before";
+			content: "bg-magenta fg-darken-before";
 		}
 		dt{
 			font-weight: 600;
@@ -122,8 +125,8 @@
 			Descargalo en <a href="https://github.com/REP98/Colors" target="_blank" class="fg-github-8 fg-github-5-visited fg-github-3-hover">GitHub</a> o por CDN
 		</p>
 		<pre><code class="language-shell">
-https://cdn.jsdelivr.net/npm/@rep985/colors@0.1.1/dist/css/brands.min.css
-https://cdn.jsdelivr.net/npm/@rep985/colors@0.1.1/dist/css/color.min.css
+https://cdn.jsdelivr.net/npm/@rep985/colors@0.2.0/dist/css/brands.min.css
+https://cdn.jsdelivr.net/npm/@rep985/colors@0.2.0/dist/css/color.min.css
 		</code></pre>
 		<p>Además puede usarlo por NPM</p>
 		<pre><code class="language-shell">npm i @rep985/colors</code></pre>
@@ -1065,11 +1068,11 @@ $brands: map-merge(
 	<div style="display: flex;margin-bottom: 5vh;">
 		<div style="width: 70%;margin: auto;border: 1px dashed;border-radius: 10px;/*! box-shadow: ; */box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);padding: 0.8em;" class="bd-dark bg-darken">
 			<div style="display: flex;align-items: center;justify-content: center;width: 100%;/*! color: ; */" class="fg-deep-orange">
-				<img src="https://s.gravatar.com/avatar/b5b9d7143abad78cc603b023a2433788?s=80" alt="Robert Pérez" style="border-radius: 100%;" width="80px" height="80px" loading="lazy" alt="avatar Robert Pérez">
+				<img src="https://www.gravatar.com/avatar/f038a52e92fc935bd8b7215d26673a6d" alt="Robert Pérez" style="border-radius: 100%;" width="80px" height="80px" loading="lazy" alt="avatar Robert Pérez" class="hovercard">
 				<h2 style="margin: 0;margin-left: 0.4em;font-size: 1.2em;">Me llamo Robert Pérez</h2>
 			</div>
 			<p style="text-align: center;font-size: 0.9em;" class="fg-white">
-				Si te gusto vistia mi <a href="https://rep98.github.io" class="fg-deep-orange fg-deep-orange-active-d2 fg-orange-visited fg-red-hover-l2" alt="REP98" target="_blank" rel="follow">Sitio Web</a>
+				Si te gusto vistia mi <a href="https://rep98.vzlaweb.com" class="fg-deep-orange fg-deep-orange-active-d2 fg-orange-visited fg-red-hover-l2" alt="REP98" target="_blank" rel="follow">Sitio Web</a>
 				donde encontras otros geniales proyectos como este.
 			</p>
 		</div>

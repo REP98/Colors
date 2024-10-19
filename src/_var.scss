@@ -1,34 +1,37 @@
+@use "sass:color";
+@use "sass:map";
+
 $enable-scroll: true !default;
-/// Lista de colores disponibles
-$white: 				#FFF !default;
-$black: 				#000 !default;
-$red: 					#ff3b4f !default;
-$pink:  				#E91E63 !default;
-$magenta:				#FF00DC !default;
-$purple: 				#9C27B0 !default;
-$deep-purple:		#673ab7 !default;
-$rose:    			#e91e63 !default;
-$indigo:				#3f51b5 !default;
-$blue:					#3b4fff !default;
-$light-blue: 		#3bffeb !default;
-$cyan: 					#00bcd4 !default;
-$teal: 					#009688 !default;
-$green: 				#3bb650 !default;
-$light-green: 	#8bc34a !default;
-$lime: 					#cddc39 !default;
-$green-yellow: 	#B8FF2F !default;
-$yellow: 				#FFEB3B !default;
-$yellowk:				#f3ec7a !default;
-$amber: 				#ffc107 !default;
-$orange: 				#ff9800 !default;
-$deep-orange: 	#ff5722 !default;
-$brown: 				#795548 !default;
-$blue-grey:			#607d8b !default;
-$grey:					#9e9e9e !default;
-$gray:					#E5E5E5 !default;
-$darken: 				#212121 !default;
-$nickel: 				#727c7b !default;
-$transparent:		transparent !default;
+/// Lista de colores disponibles (Material Design Modernos)
+$white: #F5F5F5 !default;
+$black: #212121 !default;
+$red: #F44336 !default;
+$pink: #E91E63 !default;
+$magenta: #FF4081 !default;
+$purple: #9C27B0 !default;
+$deep-purple: #673AB7 !default;
+$rose: #E91E63 !default;
+$indigo: #3F51B5 !default;
+$blue: #2196F3 !default;
+$light-blue: #03A9F4 !default;
+$cyan: #00BCD4 !default;
+$teal: #009688 !default;
+$green: #4CAF50 !default;
+$light-green: #8BC34A !default;
+$lime: #CDDC39 !default;
+$green-yellow: #DCE775 !default;
+$yellow: #FFEB3B !default;
+$yellowk: #FFF176 !default;
+$amber: #FFC107 !default;
+$orange: #FF9800 !default;
+$deep-orange: #FF5722 !default;
+$brown: #795548 !default;
+$blue-grey: #607D8B !default;
+$grey: #9E9E9E !default;
+$gray: #E0E0E0 !default;
+$darken: #303030 !default;
+$nickel: #B0BEC5 !default;
+$transparent: transparent !default;
 
 $colors: () !default;
 /// Matriz de colores para generar las clases CSS, 
@@ -45,7 +48,7 @@ $colors: () !default;
 /// @prop       {Map} color
 /// @prop       {String} color.key - Nombre del Color
 /// @prop       {Color} color.value - Variable del color
-$colors: map-merge( 
+$colors: map.merge( 
 	(
 		"white":				$white,
 		"black": 				$black,
@@ -92,7 +95,7 @@ $warning:       $amber !default;
 $danger:        $red !default;
 $light:         $gray !default;
 $dark:          $darken !default;
-$valid:			darken($green-yellow, 10%) !default;
+$valid:			color.scale($green-yellow, $lightness: - 10%) !default;
 $invalid:		#ea1c0d !default;
 
 $theme-colors: () !default;
@@ -110,7 +113,7 @@ $theme-colors: () !default;
 /// @prop       {Map} tema
 /// @prop       {String} tema.key - Nombre del color general
 /// @prop       {Color} tema.value - Variable del color
-$theme-colors: map-merge(
+$theme-colors: map.merge(
   (
     "primary":    $primary,
     "secondary":  $secondary,
@@ -130,37 +133,37 @@ $theme-colors: map-merge(
 $enable-gradients: true !default;
 // Gradient colors
 $primary-gradient:            $primary !default;
-$primary-gradient-state:      darken($primary, 20%) !default;
+$primary-gradient-state:      color.scale($primary, $lightness: - 20%) !default; 
 
 $secondary-gradient:          $secondary !default;
-$secondary-gradient-state:    darken($secondary, 20%) !default;
+$secondary-gradient-state:    color.scale($secondary, $lightness: - 20%) !default;
 
 $info-gradient:               $info !default;
-$info-gradient-state:         darken($info, 20%) !default;
+$info-gradient-state:         color.scale($info, $lightness: - 20%) !default;
 
 $success-gradient:            $success !default;
-$success-gradient-state:      darken($success, 20%) !default;
+$success-gradient-state:      color.scale($success, $lightness: - 20%) !default;
 
 $danger-gradient:             $danger !default;
-$danger-gradient-state:       darken($danger, 20%) !default;
+$danger-gradient-state:       color.scale($danger, $lightness: - 20%) !default;
 
 $invalid-gradient:            $invalid !default;
-$invalid-gradient-state:      darken($invalid, 20%) !default;
+$invalid-gradient-state:      color.scale($invalid, $lightness: - 20%) !default;
 
 $valid-gradient:              $valid !default;
-$valid-gradient-state:        darken($valid, 20%) !default;
+$valid-gradient-state:        color.scale($valid, $lightness: - 20%) !default;
 
 $warning-gradient:            $warning !default;
-$warning-gradient-state:      darken($warning, 20%) !default;
+$warning-gradient-state:      color.scale($warning, $lightness: - 20%) !default;
 
 $dark-gradient:               $dark !default;
-$dark-gradient-state:         darken($dark, 10%) !default;
+$dark-gradient-state:         color.scale($dark, $lightness: - 10%) !default;
 
 $light-gradient:              $light !default;
-$light-gradient-state:        darken($light, 10%) !default;
+$light-gradient-state:        color.scale($light, $lightness: - 10%) !default;
 
-$dark-gradient-dark:          darken($dark, 5%) !default;
-$dark-gradient-state-dark:    darken($dark, 15%) !default;
+$dark-gradient-dark:          color.scale($dark, $lightness: - 5%) !default;
+$dark-gradient-state-dark:    color.scale($dark, $lightness: - 15%) !default;
 
 $theme-gradient-colors: () !default;
 
@@ -177,7 +180,7 @@ $theme-gradient-colors: () !default;
 /// @prop       {Map} theme.gradient
 /// @prop       {String} theme.gradient.key - Nombre del color general
 /// @prop       {Color} theme.gradient.value - Variable del color
-$theme-gradient-colors: map-merge(
+$theme-gradient-colors: map.merge(
 	(
 	  "primary":    ($primary-gradient, $primary-gradient-state),
 	  "secondary":  ($secondary-gradient, $secondary-gradient-state),
@@ -211,7 +214,7 @@ $brands: () !default;
 /// @prop       {Map} brands
 /// @prop       {String} brands.key - Nombre del color general
 /// @prop       {Color} brands.value - Variable del color
-$brands: map-merge( 
+$brands: map.merge( 
 	(
 		"adobe": #ff0000,
 		"adobe-1": #ff0000,

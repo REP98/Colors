@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "var" as *;
 /// Ayuda a aclara el color para el uso de clases
 
 @mixin colors($color, $propetics){
@@ -38,35 +40,37 @@
 	}
 }
 
-/// @example    .bg-red-l5 // el color sera 5 veces mas claro
+/// @example    .bg-red-l5 // el color será 5 veces más claro
 /// @param      {Colors} $color - Color a iluminar
-/// @param      {String} $propetics - Propiedad a aplicar ejm. `color, background-color`
-@mixin lightenColor($color, $propetics){
-  @for $i from 1 through 5 {
-	&-hover-l#{$i}:hover,
-	&-focus-l#{$i}:focus,
-	&-active-l#{$i}:active,
-	&-l#{$i}{
-	  #{$propetics}: lighten($color, ($i * 5)) !important;
+/// @param      {String} $property - Propiedad a aplicar ej. `color, background-color`
+@mixin lightenColor($color, $property) {
+	@for $i from 1 through 5 {
+	  &-hover-l#{$i}:hover,
+	  &-focus-l#{$i}:focus,
+	  &-active-l#{$i}:active,
+	  &-l#{$i} {
+		#{$property}: color.scale($color, $lightness: $i * 5%) !important;
+	  }
 	}
   }
-}
-/// Ayuda a oscurecer el color para el uso de clases
-/// @example    .bg-red-d5 // el color sera 5 veces mas oscuro
-/// @param      {Colors} $color - Color a oscurecer
-/// @param      {String} $propetics - Propiedad a aplicar ejm. `color, background-color`
-@mixin darkenColor($color, $propetics){
-  @for $i from 1 through 5 {
-	&-hover-d#{$i}:hover,
-	&-focus-d#{$i}:focus,
-	&-active-d#{$i}:active,
-	&-d#{$i}{
-	  #{$propetics}: darken($color, ($i * 5)) !important;
+  
+  /// Ayuda a oscurecer el color para el uso de clases
+  /// @example    .bg-red-d5 // el color será 5 veces más oscuro
+  /// @param      {Colors} $color - Color a oscurecer
+  /// @param      {String} $property - Propiedad a aplicar ej. `color, background-color`
+  @mixin darkenColor($color, $property) {
+	@for $i from 1 through 5 {
+	  &-hover-d#{$i}:hover,
+	  &-focus-d#{$i}:focus,
+	  &-active-d#{$i}:active,
+	  &-d#{$i} {
+		#{$property}: color.scale($color, $lightness: -($i * 5%)) !important;
+	  }
 	}
   }
-}
 
 // for social buttons
+
 @mixin social-buttons-color ($color, $state-color) {
   background-color: $color;
   color: $white;

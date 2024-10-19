@@ -1,10 +1,12 @@
-@import "var";
-@import "mix";
+@use "sass:color";
+@use "sass:list";
+
+@use "var" as *;
+@use "mix" as *;
 ////
 /// @group Color
 /// Clases para gestion de colores en css
 ////
-
 
 ::-moz-selection { color: $yellow;  background: $dark; }
 ::-webkit-selection { color: $yellow;  background: $dark; }
@@ -17,7 +19,7 @@
 	}
 }
 
-/** Colores */
+/**Colors */
 @each $n,$v in $colors{
 	@if $enable-scroll {
 		@if $n != "transparent" {
@@ -156,19 +158,23 @@
 	/**  Degradados */
 	@each $prop, $value in $theme-gradient-colors {
 		.bg-gradient-#{$prop} {
-	    	@include gradient-directional(nth($value, 1) 0%, nth($value, -1) 100%, $deg: 195deg);
+	    	@include gradient-directional(list.nth($value, 1) 0%, list.nth($value, 2) 100%, $deg: 195deg);
 	  	}
 	}
 
 	@each $prop, $value in $theme-gradient-colors {
 		.bg-gradient-#{$prop}-radial {
-	    	@include gradient-radial(nth($value, 1), nth($value, -1));
+	    	@include gradient-radial(list.nth($value, 1), list.nth($value, 2));
 	  	}
 	}
 
 	@each $prop, $value in $theme-colors {
 	  .bg-gradient-faded-#{$prop} {
-	    background-image: radial-gradient(370px circle at 80% 50%,rgba($value, .6) 0,darken($value, 10%) 100%)
+	    background-image: radial-gradient(
+        370px circle at 80% 50%, 
+        rgba($value, .6) 0, 
+        color.scale($value, $lightness: -10%) 100%
+		);
 	  }
 	}
 }
