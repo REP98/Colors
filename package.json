@@ -14,7 +14,7 @@
   "homepage": "https://rep98.github.io/Colors",
   "repository": {
     "type": "git",
-    "url": "https://github.com/REP98/Colors.git"
+    "url": "git+https://github.com/REP98/Colors.git"
   },
   "license": "MIT",
   "devDependencies": {
