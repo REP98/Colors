@@ -17,10 +17,10 @@ Añade
 ```Html
 <!-- CDN -->
 <!-- Combinado -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/@rep985/colors@0.1.1/dist/css/brands.min.css,npm/@rep985/colors@0.1.1/dist/css/color.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/@rep985/colors@0.2.0/dist/css/brands.min.css,npm/@rep985/colors@0.1.1/dist/css/color.min.css">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rep985/colors@0.1.1/dist/css/brands.min.css"> <!-- Clases de Colores -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rep985/colors@0.1.1/dist/css/color.min.css"> <!-- Clases para marcas -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rep985/colors@0.2.0/dist/css/brands.min.css"> <!-- Clases de Colores -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rep985/colors@0.2.0/dist/css/color.min.css"> <!-- Clases para marcas -->
 <!-- O local -->
 <link rel="stylesheet" href="path/Colors/dist/css/color.css"> <!-- Clases de Colores -->
 <link rel="stylesheet" href="path/Colors/dist/css/brands.css"> <!-- Clases para marcas -->
@@ -40,10 +40,11 @@ Se ofrece 4 variables Sass para añadir o modificar los colores
 #### Colores
 Se dispone de una Variable `$color` que es un mapa scss
 ```Scss
+@use "sass:map";
 // Esto modificara el color rojo
-$color: map-merge(("red": #f22), $color); 
+$color: map.merge(("red": #f22), $color); 
 // Esto añade el color pinklight
-$color: map-merge(("pinklight": #f08bc4), $color);
+$color: map.merge(("pinklight": #f08bc4), $color);
 ```
 De igual manera puede hacerlos con las siguientes variables
 ``` Scss
