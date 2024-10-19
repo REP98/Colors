@@ -1,6 +1,6 @@
 {
   "name": "@rep985/colors",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Colores Css y Scss para tu web",
   "scripts": {
     "css": "sass src:dist/css --error-css --style=compressed --update -c --stop-on-error",
