@@ -25,10 +25,10 @@ Añade
 ```Html
 <!-- CDN -->
 <!-- Combinado -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/@rep985/colors@0.2.0/dist/css/brands.min.css,npm/@rep985/colors@0.1.1/dist/css/color.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/@rep985/colors@0.2.1/dist/css/brands.min.css,npm/@rep985/colors@0.2.1/dist/css/color.min.css">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rep985/colors@0.2.0/dist/css/brands.min.css"> <!-- Clases de Colores -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rep985/colors@0.2.0/dist/css/color.min.css"> <!-- Clases para marcas -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rep985/colors@0.2.1/dist/css/brands.min.css"> <!-- Clases de Colores -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rep985/colors@0.2.1/dist/css/color.min.css"> <!-- Clases para marcas -->
 <!-- O local -->
 <link rel="stylesheet" href="path/Colors/dist/css/color.css"> <!-- Clases de Colores -->
 <link rel="stylesheet" href="path/Colors/dist/css/brands.css"> <!-- Clases para marcas -->
